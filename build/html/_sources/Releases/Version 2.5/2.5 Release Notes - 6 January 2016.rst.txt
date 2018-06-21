@@ -1,0 +1,12 @@
+2.5.0 Release Notes - 6 January 2016
+====================================
+
+**Status: Stable**
+
+2.5.0 is a stable release, and all users of Blis version 1.0.3 are encouraged to adopt it.
+
+**Release Notes**
+
+| Assets
+| `Source code (zip) <https://github.com/ilabafrica/BLIS/archive/2.5.zip>`_
+| `Source code (tar.gz) <https://github.com/ilabafrica/BLIS/archive/2.5.tar.gz>`_

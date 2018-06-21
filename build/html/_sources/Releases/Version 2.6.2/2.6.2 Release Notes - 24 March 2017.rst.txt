@@ -1,0 +1,23 @@
+2.6.2 Release Notes - 24 March 2017
+===================================
+
+**Status: Stable**
+
+2.6.2 is a stable release, and all users of Blis version 2.6.0 are encouraged to adopt it.
+
+**Release Notes**
+
+| Assets
+| `Source code (zip) <https://github.com/ilabafrica/BLIS/archive/2.6.2.zip>`_
+| `Source code (tar.gz) <https://github.com/ilabafrica/BLIS/archive/2.6.2.tar.gz>`_
+
+
+**Bug fixes**
+
+* Fixed inventory bugs
+* Fixed Controls bugs
+* Added measure reordering feature
+* Added audit trail for test results
+* Added new reports
+* Added api for blis client interfacer
+* Ability to add age as number

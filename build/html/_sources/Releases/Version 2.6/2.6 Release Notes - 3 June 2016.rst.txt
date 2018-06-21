@@ -1,0 +1,55 @@
+2.6.0 Release Notes - 3 June 2016
+=================================
+
+**Status: Stable**
+
+2.6.0 is a stable release, and all users of Blis version 2.5.0 are encouraged to adopt it.
+
+**Release Notes**
+
+| Assets
+| `Source code (zip) <https://github.com/ilabafrica/BLIS/archive/2.6.zip>`_
+| `Source code (tar.gz) <https://github.com/ilabafrica/BLIS/archive/2.6.tar.gz>`_
+
+**Instructions**
+
+**Requirements**
+
+#. Supported database. Currently only `MySQL <http://dev.mysql.com/downloads/mysql/>`_ has been tested. Laravel also supports PostgreSQL, SQLite and SQL Server
+#. `PHP <http://php.net/>`_ (>= 5.4)
+#. `Composer <https://getcomposer.org/>`_ - Dependency manager for PHP
+
+**Quick Start**
+
+#. Install the above mentioned requirements
+#. Download this git repository to a local folder: `https://github.com/ilabafrica/iBLIS/archive/2.6.zip <https://github.com/ilabafrica/iBLIS/archive/2.6.zip>`_
+#. Change directory to the root folder of the application. Update composer then run it in order to install the application dependencies. You may need root permissions to update composer.::
+
+	composer self-update
+	composer install
+
+#. Update the application configuration files to suit your local settings:
+	
+	* Set the "Application URL" in /app/config/app.php
+	* Create a database and set the database connection details in /app/config/database.php
+	* The organization name in /app/config/kblis.php
+
+#. Run the migrations to create the required database tables::
+
+	php artisan migrate
+
+#. Load the basic seed data::
+
+	php artisan db:seed
+
+#. If you are running the application on a webserver eg. apache, ensure that the webserver has write permissions to the ``/app/storage`` folder. Ideally the web-root should be the ``/public`` folder. The default login credentials are '*administrator*' '*password*'
+
+* If `#5 <https://github.com/ilabafrica/BLIS/issues/5>`_ or `#6 <https://github.com/ilabafrica/BLIS/issues/6>`_ above fails, you may need to run the following command then repeat the two commands again.
+
+**Troubleshooting**
+
+* Ensure that you enable mod_rewrite, ``sudo a2enmod rewrite`` if you are using apache. This should solve the problem of routing failures.
+
+**Feature List**
+
+The list of features is available `here <https://github.com/ilabafrica/iBLIS/wiki>`_

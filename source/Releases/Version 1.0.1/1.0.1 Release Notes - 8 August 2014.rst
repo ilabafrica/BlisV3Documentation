@@ -1,0 +1,21 @@
+1.0.1 Release Notes - 8 August 2014
+===================================
+
+**Status: Stable**
+
+1.0.1 is a stable release, and all users of Blis version 1.0.0 are encouraged to adopt it.
+
+**Release Notes**
+
+**Download or View on GitHub**
+
+| Assets
+| `Source code (zip) <https://github.com/ilabafrica/BLIS-BDH/archive/v1.0.1.zip>`_
+| `Source code (tar.gz) <https://github.com/ilabafrica/BLIS-BDH/archive/v1.0.1.tar.gz>`_
+
+**Minor bug fixes**
+
+**Changes**
+
+* Reverted back to CATAUTO `#33 <https://github.com/ilabafrica/BLIS-BDH/issues/33>`_
+* Enable other users other than superadmin to add patients

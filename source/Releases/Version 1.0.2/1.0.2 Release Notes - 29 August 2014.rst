@@ -1,0 +1,23 @@
+1.0.2 Release Notes - 29 August 2014
+====================================
+
+**Status: Stable**
+
+1.0.2 is a stable release, and all users of Blis version 1.0.1 are encouraged to adopt it.
+
+**Release Notes**
+
+**Download or View on GitHub**
+
+| Assets
+| `Source code (zip) <https://github.com/ilabafrica/BLIS-BDH/archive/v1.0.2.zip>`_
+| `Source code (tar.gz) <https://github.com/ilabafrica/BLIS-BDH/archive/v1.0.2.tar.gz>`_
+
+**Bug fixes**
+
+* fixes bug in verification of test with no parent. `#74 <https://github.com/ilabafrica/BLIS-BDH/issues/74>`_
+* Small bug in abbreviation, did not work in the culture worksheet `#70 <https://github.com/ilabafrica/BLIS-BDH/issues/70>`_
+
+**Enhancement**
+
+* RevAdded abbreviations script containing common abbreviations `#70 <https://github.com/ilabafrica/BLIS-BDH/issues/70>`_

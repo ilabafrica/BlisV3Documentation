@@ -21,6 +21,7 @@ Contents
    Releases/Release Notes
    Feature List (Current)
    Standards
+   Versioning and Releasing
    license
    help
 

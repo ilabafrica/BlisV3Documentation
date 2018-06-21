@@ -39,7 +39,7 @@ Database
 
 **HTML and CSS**
 
-#. All CSS should be placed in an external stylesheet file (public/css/)
+#. All CSS should be placed in an external stylesheet file (``public/css/``)
 #. CSS class names should use hyphens when joining words e.g. ‘user-image’
 #. Indent for readability in order of precedence e.g.::
 
@@ -64,7 +64,7 @@ Javascript
 **********
 
 #. Using jquery
-#. All javascript code should be in external files (public/js/)
+#. All javascript code should be in external files (``public/js/``)
 
 Github
 ******

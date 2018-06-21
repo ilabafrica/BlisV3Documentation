@@ -1,0 +1,36 @@
+1.0.0 Release Notes - 4 August 2014
+===================================
+
+**Status: Stable**
+
+1.0.0 is a stable release.
+
+**Release Notes**
+
+**Download or View on GitHub**
+
+| Assets
+| `Blis.-.server2go.zip <https://github.com/ilabafrica/BLIS-BDH/releases/download/v1.0.0/Blis.-.server2go.zip>`_
+| `Source code (zip) <https://github.com/ilabafrica/BLIS/archive/2.5.zip>`_
+| `Source code (tar.gz) <https://github.com/ilabafrica/BLIS/archive/2.5.tar.gz>`_
+
+**Initial release**
+
+**Major changes**
+
+* Drug susceptibility functionality
+* Culture worksheets functionality
+* Force verification functionality
+* Abbreviation for long words functionality
+* Drop down for rejection reasons
+* Sequential lab-no's for microbiology
+
+**Bug fixes**
+
+* Referral specimen details appearing in report
+* Added time/date of verification in results report
+* Fixed the prevalence report
+* Fixed add user form
+
+Updated BGM on 3rd August 2014, System was OK.
+

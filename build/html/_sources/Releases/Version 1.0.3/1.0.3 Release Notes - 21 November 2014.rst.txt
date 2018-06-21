@@ -1,0 +1,18 @@
+1.0.3 Release Notes - 21 November 2014
+======================================
+
+**Status: Stable**
+
+1.0.3 is a stable release, and all users of Blis version 1.0.2 are encouraged to adopt it.
+
+**Release Notes**
+
+**Download or View on GitHub**
+
+| Assets
+| `Source code (zip) <https://github.com/ilabafrica/BLIS-BDH/archive/v1.0.3.zip>`_
+| `Source code (tar.gz) <https://github.com/ilabafrica/BLIS-BDH/archive/v1.0.3.tar.gz>`_
+
+* Added daily referral reports
+* Referral facilities are now drop down
+* Fixed Validation bug
