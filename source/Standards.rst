@@ -50,7 +50,7 @@ Database
       	.form-group .form-pane{}
       		.form-group .form-pane label{}
 
-#. Never use !**important;**
+#. Never use **!important;**
 #. CSS files should have categorised sections e.g. for user files, for general layout
 #. Use contextual elements such as **<strong>** and **<em>** instead of **<b>** or **<i>**
 #. Page layout should be done from the CSS file. Do not use **&nbsp**; for spacing. If done properly there should be no need to use **<br>** either
