@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Standards &mdash; Blis-V3 3.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="Feature List (Current)" href="Feature List (Current).html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Blis-V3
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Feature List (Current).html">Feature List (Current)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Standards</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-programming">General programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#database">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#javascript">Javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#github">Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#feature-check-list">Feature check list</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#id1">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Blis-V3</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Standards</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Standards.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="standards">
+<h1>Standards<a class="headerlink" href="#standards" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="general-programming">
+<h2>General programming<a class="headerlink" href="#general-programming" title="Permalink to this headline">¶</a></h2>
+<p>All indices should zero based. e.g. if a <strong>&lt;select&gt;</strong> element has sequential numeric values these would be from the series 0,1,2,3,…</p>
+</div>
+<div class="section" id="database">
+<h2>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h2>
+<p><strong>Naming</strong></p>
+<ul class="simple">
+<li>table names, column names: all lowercase, use underscores to separate words e.g <strong>specimen_id, test_type_id</strong></li>
+<li>names with abbreviations may be treated differently e.g. <strong>targetTAT</strong> makes more sense</li>
+<li>better long names that makes sense</li>
+</ul>
+<ol class="arabic simple">
+<li>Use of appropriate field type e.g. ‘<strong>SMALLINT</strong>’ instead of ‘<strong>STRING</strong>’ for age</li>
+<li>If a primary key is necessary on a table it should be the first column and should be named ‘id’. It should be unsigned.</li>
+<li>When this id is referenced in another table (as a foreign key) it should be called ‘<strong>tablename_id</strong>’</li>
+<li>Table names are in the plural e.g. <strong>specimens</strong> instead of <strong>specimen</strong></li>
+<li>Create a migration file for every new table or change to a table. If necessary add the seed data using a separate file. See the <a class="reference external" href="https://laravel.com/docs/5.6/migrations">Migrations &amp; Seeding section</a> of the online Laravel guide.</li>
+</ol>
+<p><strong>PHP Classes This applies to Controllers, Models, migration and seeding classes, …</strong></p>
+<ol class="arabic simple">
+<li>Class names always begins with uppercase e.g. <strong>CreateTestTypeMeasureTable</strong></li>
+<li>When combining words every word begins with uppercase. Do not use underscores e.g. <strong>SpecimenType</strong> as opposed to <strong>Specimen_type</strong></li>
+<li>Method or Function names begin in lowercase and words join in uppercase e.g. <strong>getSpecimenTypes()</strong></li>
+<li>Provide descriptive class and function comments before their definitions</li>
+<li>Variable names - begin in lowercase. Multiple words should begin in upper case e.g. <strong>specimenType</strong></li>
+<li>Better long names that makes sense e.g. <strong>specimenType</strong> instead of <strong>speTyp</strong></li>
+<li>Soft delete(s) preferable to hard delete(s)</li>
+</ol>
+<p><strong>Laravel views</strong></p>
+<ol class="arabic simple">
+<li>Using blade templating engine</li>
+<li>All html elements in lowercase</li>
+<li>Using bootstrap for css</li>
+</ol>
+<p><strong>HTML and CSS</strong></p>
+<ol class="arabic">
+<li><p class="first">All CSS should be placed in an external stylesheet file (public/css/)</p>
+</li>
+<li><p class="first">CSS class names should use hyphens when joining words e.g. ‘user-image’</p>
+</li>
+<li><p class="first">Indent for readability in order of precedence e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="p">{}</span>
+<span class="o">.</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="o">.</span><span class="n">actions</span><span class="o">-</span><span class="n">row</span><span class="p">{}</span>
+   <span class="o">.</span><span class="n">form</span><span class="o">-</span><span class="n">group</span> <span class="o">&gt;</span> <span class="n">label</span><span class="p">{}</span>
+   <span class="o">.</span><span class="n">form</span><span class="o">-</span><span class="n">group</span> <span class="o">.</span><span class="n">form</span><span class="o">-</span><span class="n">control</span><span class="p">{}</span>
+   <span class="o">.</span><span class="n">form</span><span class="o">-</span><span class="n">group</span> <span class="o">.</span><span class="n">form</span><span class="o">-</span><span class="n">pane</span><span class="p">{}</span>
+           <span class="o">.</span><span class="n">form</span><span class="o">-</span><span class="n">group</span> <span class="o">.</span><span class="n">form</span><span class="o">-</span><span class="n">pane</span> <span class="n">label</span><span class="p">{}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Never use !**important;**</p>
+</li>
+<li><p class="first">CSS files should have categorised sections e.g. for user files, for general layout</p>
+</li>
+<li><p class="first">Use contextual elements such as <strong>&lt;strong&gt;</strong> and <strong>&lt;em&gt;</strong> instead of <strong>&lt;b&gt;</strong> or <strong>&lt;i&gt;</strong></p>
+</li>
+<li><p class="first">Page layout should be done from the CSS file. Do not use <strong>&amp;nbsp</strong>; for spacing. If done properly there should be no need to use <strong>&lt;br&gt;</strong> either</p>
+</li>
+<li><p class="first">Comments: Include the section name e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/**</span>
+ <span class="o">*</span> <span class="n">forms</span>
+ <span class="o">*/</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="javascript">
+<h2>Javascript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Using jquery</li>
+<li>All javascript code should be in external files (public/js/)</li>
+</ol>
+</div>
+<div class="section" id="github">
+<h2>Github<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Create an issue for each change you want to make</li>
+<li>Create a branch from the master for the same change. The branch name should be descriptive</li>
+<li>Once fixed, create a pull request asking a specific person to review the feature</li>
+<li>Reviewed and approved features should be merged back to the master and the branch deleted</li>
+<li>You can link to a line of code, or a section of code by reading <a class="reference external" href="https://gist.github.com/briankip/c2fb1d40873fc644ed66">here</a></li>
+<li>There are config files that you want to change but don’t want to commit, i.e <code class="docutils literal notranslate"><span class="pre">/app/config/app.php</span></code> and <code class="docutils literal notranslate"><span class="pre">/app/config/database.php</span></code> you can prevent yourself from accidentally commiting these files by doing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">update-index</span> <span class="pre">--assume-unchanged</span> <span class="pre">/path/to/file.ext</span></code> your changes will no longer be tracked. [<a class="reference external" href="http://archive.robwilkerson.org/2010/03/02/git-tip-ignore-changes-to-tracked-files/">Read more here</a>]</li>
+</ol>
+</div>
+<div class="section" id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Every feature should have an accompanying test</li>
+<li>A feature should pass all tests before it is merged into the master branch</li>
+</ol>
+</div>
+<div class="section" id="feature-check-list">
+<h2>Feature check list<a class="headerlink" href="#feature-check-list" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">[ ] Tests for the models and controllers where applicable</div>
+<div class="line">[ ] Adding Access controls where applicable</div>
+<div class="line">[ ] Updating the wiki with relevant info about the feature</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h1>Database<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<img alt="_images/database.png" class="align-center" src="_images/database.png" />
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="license.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Feature List (Current).html" class="btn btn-neutral" title="Feature List (Current)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, @iLabAfrica.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
