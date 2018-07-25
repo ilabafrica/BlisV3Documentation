@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to Blis-V3’s documentation! &mdash; Blis-V3 3.0.0 documentation</title>
+  <title>Architecture &mdash; Blis-V3 3.0.0 documentation</title>
   
 
   
@@ -28,7 +28,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Release Notes" href="Releases/Release Notes.html" /> 
+    <link rel="next" title="Feature List (Current)" href="Feature List (Current).html" />
+    <link rel="prev" title="2.6.2 Release Notes - 24 March 2017" href="Releases/Version 2.6.2/2.6.2 Release Notes - 24 March 2017.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -47,7 +48,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> Blis-V3
+            <a href="index.html" class="icon icon-home"> Blis-V3
           
 
           
@@ -77,13 +78,12 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Releases/Release Notes.html">Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Architecture.html">Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Feature List (Current).html">Feature List (Current)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Standards.html">Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Standards.html#id1">Database</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Components.html">Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Versioning and Releasing.html">Versioning and Releasing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
@@ -101,7 +101,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Blis-V3</a>
+          <a href="index.html">Blis-V3</a>
         
       </nav>
 
@@ -130,15 +130,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Welcome to Blis-V3’s documentation!</li>
+      <li>Architecture</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/Architecture.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -151,48 +151,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <img alt="_images/logo1.png" class="align-center" src="_images/logo1.png" />
-<div class="section" id="welcome-to-blis-v3-s-documentation">
-<h1>Welcome to Blis-V3’s documentation!<a class="headerlink" href="#welcome-to-blis-v3-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>BLIS is a port of the Basic Laboratory Information System (<a class="reference external" href="https://github.com/C4G/BLIS">BLIS</a>) to the Laravel PHP Framework by <a class="reference external" href="http://ilabafrica.ac.ke">&#64;iLabAfrica</a>. BLIS was originally developed by C4G.</p>
-</div>
-<div class="section" id="contents">
-<h1>Contents:<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Releases/Release Notes.html">Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Architecture.html">Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Feature List (Current).html">Feature List (Current)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Standards.html">Standards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Standards.html#id1">Database</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Components.html">Components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Versioning and Releasing.html">Versioning and Releasing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="links">
-<h1>Links:<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><dl class="first docutils">
-<dt><strong>Project Management</strong></dt>
-<dd><ul class="first last">
-<li><a class="reference external" href="https://github.com/ilabafrica/Blis-V3/issues">Issue Tracking &amp; Project Management</a></li>
-<li><a class="reference external" href="https://github.com/ilabafrica/Blis-V3/wiki">Wiki</a></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt><strong>Development</strong></dt>
-<dd><ul class="first last">
-<li><a class="reference external" href="https://github.com/ilabafrica/Blis-V3">GitHub</a></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
+  <div class="section" id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -203,8 +163,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Releases/Release Notes.html" class="btn btn-neutral float-right" title="Release Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Feature List (Current).html" class="btn btn-neutral float-right" title="Feature List (Current)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="Releases/Version 2.6.2/2.6.2 Release Notes - 24 March 2017.html" class="btn btn-neutral" title="2.6.2 Release Notes - 24 March 2017" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

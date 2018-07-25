@@ -12,23 +12,25 @@ Welcome to Blis-V3's documentation!
 
 BLIS is a port of the Basic Laboratory Information System (`BLIS <https://github.com/C4G/BLIS>`_) to the Laravel PHP Framework by `@iLabAfrica <http://ilabafrica.ac.ke>`_. BLIS was originally developed by C4G.
 
-Contents
-********
+Contents:
+=========
 
 .. toctree::
    :maxdepth: 1
    
    Releases/Release Notes
+   Architecture
    Feature List (Current)
    Standards
+   Components
    Versioning and Releasing
    license
    help
 
 
 
-Links
-=====
+Links:
+======
 
 * **Project Management**
 	* `Issue Tracking & Project Management <https://github.com/ilabafrica/Blis-V3/issues>`_
