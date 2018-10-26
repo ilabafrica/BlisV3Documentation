@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Release Notes &mdash; Blis-V3 3.0.0 documentation</title>
+  <title>Release Notes &mdash; BLIS 3.0.0 documentation</title>
   
 
   
@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1.0.0 Release Notes - 4 August 2014" href="Version 1.0.0/1.0.0 Release Notes - 4 August 2014.html" />
-    <link rel="prev" title="Welcome to Blis-V3’s documentation!" href="../index.html" /> 
+    <link rel="prev" title="Welcome to BLIS’s documentation!" href="../index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -48,7 +48,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Blis-V3
+            <a href="../index.html" class="icon icon-home"> BLIS
           
 
           
@@ -87,13 +87,15 @@
 <li class="toctree-l2"><a class="reference internal" href="Version 2.5/2.5 Release Notes - 6 January 2016.html">2.5.0 Release Notes - 6 January 2016</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Version 2.6/2.6 Release Notes - 3 June 2016.html">2.6.0 Release Notes - 3 June 2016</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Version 2.6.2/2.6.2 Release Notes - 24 March 2017.html">2.6.2 Release Notes - 24 March 2017</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Version 3.0/3.0 Alpha Release Notes - 25 September 2018.html">3.0 Alpha Release Notes - 25 September 2018</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../Architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Feature List (Current).html">Feature List (Current)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Standards.html">Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Standards.html#id1">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Components.html">Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Versioning and Releasing.html">Versioning and Releasing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Versioning and Releasing.html#semantic-versioning-2-0-0">Semantic Versioning 2.0.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../help.html">Help</a></li>
 </ul>
@@ -110,7 +112,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Blis-V3</a>
+          <a href="../index.html">BLIS</a>
         
       </nav>
 
@@ -172,6 +174,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Version 2.5/2.5 Release Notes - 6 January 2016.html">2.5.0 Release Notes - 6 January 2016</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Version 2.6/2.6 Release Notes - 3 June 2016.html">2.6.0 Release Notes - 3 June 2016</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Version 2.6.2/2.6.2 Release Notes - 24 March 2017.html">2.6.2 Release Notes - 24 March 2017</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Version 3.0/3.0 Alpha Release Notes - 25 September 2018.html">3.0 Alpha Release Notes - 25 September 2018</a></li>
 </ul>
 </div>
 </div>
@@ -187,7 +190,7 @@
         <a href="Version 1.0.0/1.0.0 Release Notes - 4 August 2014.html" class="btn btn-neutral float-right" title="1.0.0 Release Notes - 4 August 2014" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Welcome to Blis-V3’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral" title="Welcome to BLIS’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -196,7 +199,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, @iLabAfrica.
+        &copy; Copyright 2018, @iLabAfrica
 
     </p>
   </div>
@@ -215,20 +218,14 @@
 
   
 
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'3.0.0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
 
   
 

@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Blis-V3'
+project = 'BLIS'
 copyright = '2018, @iLabAfrica'
 author = 'Benjamin Owenda'
 

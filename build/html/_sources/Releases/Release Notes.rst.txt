@@ -13,3 +13,4 @@ To download a release, please visit `GitHub <https://github.com/ilabafrica>`_
    Version 2.5/2.5 Release Notes - 6 January 2016
    Version 2.6/2.6 Release Notes - 3 June 2016
    Version 2.6.2/2.6.2 Release Notes - 24 March 2017
+   Version 3.0/3.0 Alpha Release Notes - 25 September 2018

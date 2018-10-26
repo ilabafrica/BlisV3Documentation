@@ -7,7 +7,7 @@
 	:align: center
 
 
-Welcome to Blis-V3's documentation!
+Welcome to BLIS's documentation!
 ===================================
 
 BLIS is a port of the Basic Laboratory Information System (`BLIS <https://github.com/C4G/BLIS>`_) to the Laravel PHP Framework by `@iLabAfrica <http://ilabafrica.ac.ke>`_. BLIS was originally developed by C4G.
