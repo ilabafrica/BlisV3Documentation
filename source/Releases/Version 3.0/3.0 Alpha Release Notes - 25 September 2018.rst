@@ -7,6 +7,22 @@
 
 **Release Notes**
 
+This release represents a major milestone in Blis which is the result of software re-architecture. 3.0 alpha includes new features in front-end implementation with the adoption of vue js and laravel-mix technologies and inclusion of EMR Interface and Automated Interface as standalone packages. The underlying architecture has also been updated with the adoption of laravel 5.6 - an update from 4.2.
+
+Version 3.0 Alpha shall be succeeded by version 3.1.0, which is a planned milestone releases and patch releases that will add more features and support including Equipment Interface and Inventory packages. Initially, the equipment interface package shall include support for ten different lab equipment. Patch releases will continue to include bug fixes, performance improvements, and pull requests are welcomed.
+
+**Compatibility**
+
+BLIS 3.0 is a RESTful API. It uses HTTP requests to GET, PUT, POST and DELETE data. It is based on representational state transfer (REST) technology, an architectural style and approach to communications often used in web services development. This design approach allows the community to adopt BLIS AS IS with the included Vue js front-end which can be used to interface with the back-end. The community may also opt for their own front-end implementations of their choosing. As of release of version 3.0 Alpha, the team has been working on a repacked standalone front-end which shall be released in future updates.
+
+Blis 3.0 Alpha was developed with MySQL relational database management system and MariaDB - a community-developed fork of the MySQL RDBMS. It is however not restricted to the prior mentioned RDBMSs as other implementations can be used with the system.
+
+APIs typically use tokens to authenticate users and do not maintain session state between requests. This warranted the use of Laravel Passport which provides a full OAuth2 server implementation for Blis. Read more: `Passport <https://laravel.com/docs/5.6/passport>`_.
+
+Access to the underlying filesystem is also recommended in order to allow for file upload. A symbolic link between the storage folder and the public folder has to be created to allow for this. The following command has to be run: ::
+
+     php artisan storage:link
+
 | Assets
 | `Source code (zip) <https://github.com/ilabafrica/Blis-V3/archive/v3.0-alpha.zip>`_
 | `Source code (tar.gz) <https://github.com/ilabafrica/Blis-V3/archive/v3.0-alpha.tar.gz>`_
