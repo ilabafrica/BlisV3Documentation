@@ -95,6 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Standards.html">Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Standards.html#id1">Database</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Components.html">Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Versioning and Releasing.html">Versioning and Releasing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../help.html">Help</a></li>
@@ -175,7 +176,7 @@
 <p>BLIS 3.0 is a RESTful API. It uses HTTP requests to GET, PUT, POST and DELETE data. It is based on representational state transfer (REST) technology, an architectural style and approach to communications often used in web services development. This design approach allows the community to adopt BLIS AS IS with the included Vue js front-end which can be used to interface with the back-end. The community may also opt for their own front-end implementations of their choosing. As of release of version 3.0 Alpha, the team has been working on a repacked standalone front-end which shall be released in future updates.</p>
 <p>Blis 3.0 Alpha was developed with MySQL relational database management system and MariaDB - a community-developed fork of the MySQL RDBMS. It is however not restricted to the prior mentioned RDBMSs as other implementations can be used with the system.</p>
 <p>APIs typically use tokens to authenticate users and do not maintain session state between requests. This warranted the use of Laravel Passport which provides a full OAuth2 server implementation for Blis. Read more: <a class="reference external" href="https://laravel.com/docs/5.6/passport">Passport</a>.</p>
-<p>Access to the underlying filesystem is also recommended in order to allow for file upload. A symboloc link between the storage folder and the public folder has to be created to allow for this. The following command has to be run:</p>
+<p>Access to the underlying filesystem is also recommended in order to allow for file upload. A symbolic link between the storage folder and the public folder has to be created to allow for this. The following command has to be run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">php</span> <span class="n">artisan</span> <span class="n">storage</span><span class="p">:</span><span class="n">link</span>
 </pre></div>
 </div>

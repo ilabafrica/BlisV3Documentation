@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deployment &mdash; BLIS 3.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Versioning and Releasing" href="Versioning and Releasing.html" />
+    <link rel="prev" title="Components" href="Components.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> BLIS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Releases/Release Notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Feature List (Current).html">Feature List (Current)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Standards.html">Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Standards.html#id1">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components.html">Components</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Deployment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#logging-into-the-dev-environment">Logging into the Dev environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#seeders">Seeders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logging-into-the-live-system">Logging into the Live System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-dashboard-admin">Main Dashboard (Admin)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Versioning and Releasing.html">Versioning and Releasing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BLIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Deployment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Deployment.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deployment">
+<h1>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="logging-into-the-dev-environment">
+<h2>Logging into the Dev environment<a class="headerlink" href="#logging-into-the-dev-environment" title="Permalink to this headline">¶</a></h2>
+<p><strong>API Authentication (Passport)</strong></p>
+<p>BLIS v3.0 API uses tokens to authenticate users and does not maintain session state between requests. It therefore uses Laravel Passport, which provides a full OAuth2 server implementation for the application in a matter of minutes. Passport is built on top of the <a class="reference external" href="https://github.com/thephpleague/oauth2-server">League OAuth2 server</a>  that is maintained by Andy Millington and Simon Hamp. More on Laravel Passport <a class="reference external" href="https://laravel.com/docs/5.6/passport">here</a></p>
+<p><strong>Installation</strong></p>
+<ol class="arabic">
+<li><p class="first">Install Passport via the Composer package manager:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">composer</span> <span class="n">require</span> <span class="n">laravel</span><span class="o">/</span><span class="n">passport</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">The Passport service provider registers its own database migration directory with the framework, so you should migrate your database after registering the provider. The Passport migrations will create the tables your application needs to store clients and access tokens:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">php</span> <span class="n">artisan</span> <span class="n">migrate</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Next, you should run the <code class="docutils literal notranslate"><span class="pre">passport:install</span></code> command. This command will create the encryption keys needed to generate secure access tokens. In addition, the command will create “personal access” and “password grant” clients which will be used to generate access tokens:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">php</span> <span class="n">artisan</span> <span class="n">passport</span><span class="p">:</span><span class="n">install</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">After running this command, add the <code class="docutils literal notranslate"><span class="pre">Laravel\Passport\HasApiTokens</span></code> trait to your <code class="docutils literal notranslate"><span class="pre">App\User</span></code> model. This trait will provide a few helper methods to your model which allow you to inspect the authenticated user’s token and scopes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php
+
+namespace App;
+
+use Laravel\Passport\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
+{
+    use HasApiTokens, Notifiable;
+}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Next, you should call the <code class="docutils literal notranslate"><span class="pre">Passport:</span> <span class="pre">:routes</span></code> method within the <code class="docutils literal notranslate"><span class="pre">boot</span></code> method of your AuthServiceProvider. This method will register the routes necessary to issue access tokens and revoke access tokens, clients, and personal access tokens:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php
+
+namespace App\Providers;
+
+use Laravel\Passport\Passport;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+
+class AuthServiceProvider extends ServiceProvider
+{
+    /**
+     * The policy mappings for the application.
+     *
+     * @var array
+     */
+    protected $policies = [
+        &#39;App\Model&#39; =&gt; &#39;App\Policies\ModelPolicy&#39;,
+    ];
+
+    /**
+     * Register any authentication / authorization services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this-&gt;registerPolicies();
+
+        Passport::routes();
+    }
+}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Finally, in your <code class="docutils literal notranslate"><span class="pre">config/auth.php</span></code> configuration file, you should set the <code class="docutils literal notranslate"><span class="pre">driver</span></code> option of the <code class="docutils literal notranslate"><span class="pre">api</span></code> authentication guard to <code class="docutils literal notranslate"><span class="pre">passport</span></code>. This will instruct your application to use Passport’s <code class="docutils literal notranslate"><span class="pre">TokenGuard</span></code> when authenticating incoming API requests:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;guards&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">&#39;web&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;driver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;session&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;provider&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+
+    <span class="s1">&#39;api&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;driver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;passport&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;provider&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="seeders">
+<h2>Seeders<a class="headerlink" href="#seeders" title="Permalink to this headline">¶</a></h2>
+<p>The Dev Seeder adds dummy data to the database. This includes users, tests, specimen, e.t.c. An admin account is also created for test purposes. The admin has all access rights and can access all routes on BLIS. The database can be seeded using <code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">artisan</span> <span class="pre">db:seed</span></code></p>
+</div>
+<div class="section" id="logging-into-the-live-system">
+<h2>Logging into the Live System<a class="headerlink" href="#logging-into-the-live-system" title="Permalink to this headline">¶</a></h2>
+<p>The API has a familiar login screen to most systems. Use your assigned Email and Password combinations to gain access into the system. The figure below shows this screen.</p>
+<img alt="_images/login.PNG" class="align-center" src="_images/login.PNG" />
+<p>If a wrong combination is used, you shall be notified by a popup.</p>
+</div>
+<div class="section" id="main-dashboard-admin">
+<h2>Main Dashboard (Admin)<a class="headerlink" href="#main-dashboard-admin" title="Permalink to this headline">¶</a></h2>
+<p>Once Authenticated, Blis V3 provides a compact and easy to use Interface. The number of visible components depends on the Authenticated User’s Role and access rights. The image below shows the administrator’s view. The admin has access rights to all components.</p>
+<img alt="_images/Home.PNG" class="align-center" src="_images/Home.PNG" />
+<p><strong>Sidebar</strong></p>
+<p>The side bar provides easy access to the components and can be expanded to reveal more items.</p>
+<img alt="_images/sidebar.PNG" class="align-center" src="_images/sidebar.PNG" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Versioning and Releasing.html" class="btn btn-neutral float-right" title="Versioning and Releasing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Components.html" class="btn btn-neutral" title="Components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, @iLabAfrica
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

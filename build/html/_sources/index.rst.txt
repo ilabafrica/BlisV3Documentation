@@ -23,6 +23,7 @@ Contents:
    Feature List (Current)
    Standards
    Components
+   Deployment
    Versioning and Releasing
    license
    help

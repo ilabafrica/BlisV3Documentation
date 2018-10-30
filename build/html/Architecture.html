@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Feature List (Current)" href="Feature List (Current).html" />
-    <link rel="prev" title="2.6.2 Release Notes - 24 March 2017" href="Releases/Version 2.6.2/2.6.2 Release Notes - 24 March 2017.html" /> 
+    <link rel="prev" title="3.0 Alpha Release Notes - 25 September 2018" href="Releases/Version 3.0/3.0 Alpha Release Notes - 25 September 2018.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -85,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Standards.html">Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Standards.html#id1">Database</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Components.html">Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Versioning and Releasing.html">Versioning and Releasing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
@@ -154,6 +155,8 @@
             
   <div class="section" id="architecture">
 <h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h1>
+<p>BLIS is based on the three-tier architecture; interpreted as the user interface (presentation layer), application tier/business rules layer and the data storage layer. The presentation layer is made up of a RESTful (HTTP) API built with Vue JS and accessed by end users through web browsers. BLIS’s functionality is exposed to end users through the APIs. This opens up the system to other platforms, including mobile apps that may use the API approach to provide integration and provide functionality. The application tier which is the main business logic is housed on a central server. The underlying architecture is independent of Operating System. Both Windows and Unix based Operating Systems can be used to host BLIS.</p>
+<p>All data is stored in a central relational MySQL database which is also the final tier. All end-points access the same data in their operation.</p>
 </div>
 
 
@@ -167,7 +170,7 @@
         <a href="Feature List (Current).html" class="btn btn-neutral float-right" title="Feature List (Current)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Releases/Version 2.6.2/2.6.2 Release Notes - 24 March 2017.html" class="btn btn-neutral" title="2.6.2 Release Notes - 24 March 2017" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Releases/Version 3.0/3.0 Alpha Release Notes - 25 September 2018.html" class="btn btn-neutral" title="3.0 Alpha Release Notes - 25 September 2018" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

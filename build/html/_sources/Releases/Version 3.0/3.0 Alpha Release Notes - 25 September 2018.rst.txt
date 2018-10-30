@@ -19,7 +19,7 @@ Blis 3.0 Alpha was developed with MySQL relational database management system an
 
 APIs typically use tokens to authenticate users and do not maintain session state between requests. This warranted the use of Laravel Passport which provides a full OAuth2 server implementation for Blis. Read more: `Passport <https://laravel.com/docs/5.6/passport>`_.
 
-Access to the underlying filesystem is also recommended in order to allow for file upload. A symboloc link between the storage folder and the public folder has to be created to allow for this. The following command has to be run: ::
+Access to the underlying filesystem is also recommended in order to allow for file upload. A symbolic link between the storage folder and the public folder has to be created to allow for this. The following command has to be run: ::
 
      php artisan storage:link
 
