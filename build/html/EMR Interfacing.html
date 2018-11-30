@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>EMR Interfacing &mdash; BLIS 3.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Deployment" href="Deployment.html" />
+    <link rel="prev" title="Components" href="Components.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> BLIS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Releases/Release Notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Feature List (Current).html">Feature List (Current)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Standards.html">Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Standards.html#id1">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Components.html">Components</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">EMR Interfacing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#steps-for-blis-integration-to-an-emr-api">Steps for BLIS Integration to an EMR API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Versioning and Releasing.html">Versioning and Releasing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BLIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>EMR Interfacing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/EMR Interfacing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="emr-interfacing">
+<h1>EMR Interfacing<a class="headerlink" href="#emr-interfacing" title="Permalink to this headline">¶</a></h1>
+<p>BLIS allows tests to be requested via an external system. BLIS has been configured in a way where  a test  can be requested by multiple external systems. This will only happen if the systems can integrate and map fully with BLIS. External system configuration and integration with BLIS will depend on the available systems in any given hospital.</p>
+<p>Currently BLIS allows intergration of SANITAS and mHealth4Afrika  to interface with BLIS.</p>
+<p>A user can send a test request to BLIS and receive the results.</p>
+<div class="section" id="steps-for-blis-integration-to-an-emr-api">
+<h2>Steps for BLIS Integration to an EMR API<a class="headerlink" href="#steps-for-blis-integration-to-an-emr-api" title="Permalink to this headline">¶</a></h2>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>The EMR should try to log in to the BLIS server to authenticate if its allowed to send a test request.eg.
+Url:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">api</span><span class="o">/</span><span class="n">tpa</span><span class="o">/</span><span class="n">login</span>
+</pre></div>
+</div>
+<p>Data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;headers&quot;</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;Accept&quot;</span> <span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Content-type&quot;</span> <span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;json&quot;</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;email&quot;</span> <span class="p">:</span> <span class="s2">&quot;email@example.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;password&quot;</span> <span class="p">:</span> <span class="s2">&quot;password&quot;</span>
+   <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><a href="#id3"><span class="problematic" id="id4">*</span></a>BLIS should have the credentials that EMR shoud use inorder to give them access to send a request to the system.</p>
+<p><a href="#id5"><span class="problematic" id="id6">*</span></a>When the EMR is authenticated it receives an access token from BLIS and uses it to post test requests to BLIS.eg.
+Url:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">testrequest</span>
+</pre></div>
+</div>
+<p>Data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    {
+&#39;headers&#39; : {
+  &#39;Accept&#39; : &#39;application/json&#39;,
+  &#39;Content-type&#39; : &#39;application/json&#39;,
+  &#39;Authorization&#39; : &#39;Bearer &#39;.$accessToken
+}
+&#39;json&#39; :  {
+    &quot;resourceType&quot; : &quot;DiagnosticOrder&quot;,
+    &quot;subject&quot; : {
+      &quot;identifier&quot; : &quot;CJjajd6237&quot;,
+      &quot;name&quot;: &quot;Makanga Dickson&quot;,
+      &quot;birthDate&quot;: &quot;1994-05-30&quot;,
+      &quot;gender&quot;: &quot;male&quot;
+    },
+    &quot;orderer&quot; : {
+      &quot;name&quot;:&quot;Alfred Ojok&quot;,
+      &quot;contact&quot;:&quot;+777 7777 777 777&quot;,
+      &quot;organization&quot;:&quot;iLabAfrica Medical Centre&quot;
+    },
+    &quot;encounter&quot; : {
+      &quot;resourceType&quot; : &quot;Encounter&quot;,
+      &quot;class&quot;:&quot;outpatient&quot;,
+    },
+    &quot;supportingInformation&quot; : &quot;-&quot;,
+    &quot;item&quot; : {
+      {
+        &quot;test_type_id&quot;:&quot;EGerG54&quot;,
+        &quot;specimen&quot; : &quot;Stool&quot;
+      }
+    },
+    &quot;note&quot; : &quot;lorem ipsum&quot;
+  }
+}
+</pre></div>
+</div>
+<p>After BLIS receives a test request from an EMR and completes the result entry,it does the following:</p>
+<p><a href="#id7"><span class="problematic" id="id8">*</span></a>First BLIS tries to log into the EMR, When BLIS is authenticated it receives an access token from EMR and uses it to post test results to EMR eg.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+    &#39;headers&#39; : {
+      &#39;Accept&#39; : &#39;application/json&#39;,
+      &#39;Content-type&#39; : &#39;application/json&#39;,
+      &#39;Authorization&#39; : &#39;Bearer &#39;.$accessToken
+    }
+    &#39;json&#39; :  {
+          &quot;resourceType&quot; : &quot;DiagnosticReport&quot;,
+          &quot;identifier&quot; : &quot;MBaX77TLgUgZOOIlSh&quot;,
+          &quot;subject&quot; : {
+            &quot;identifier&quot; : &quot;MBaX77TLgUgZOOIlSh&quot;,
+          },
+          &quot;result&quot; : {
+            &quot;resourceType&quot; : &quot;Observation&quot;,
+            &quot;identifier&quot; : &quot;BaX77TLgUgZ&quot;,
+            &quot;effectiveDateTime&quot; : NULL,
+            &quot;issued&quot; : NULL,
+            &quot;performer&quot; : &quot;Alex Lab&quot;,
+            &quot;component&quot; : [
+              {
+                &quot;code&quot; : &quot;Specific Gravity&quot;,
+                &quot;valueString&quot; : &quot;10&quot;,
+              }
+            ],
+          },
+        }
+}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Deployment.html" class="btn btn-neutral float-right" title="Deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Components.html" class="btn btn-neutral" title="Components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, @iLabAfrica
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
