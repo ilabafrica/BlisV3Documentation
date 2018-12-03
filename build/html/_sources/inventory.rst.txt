@@ -1,0 +1,9 @@
+INVENTORY 
+==========
+
+The inventory module deals with the laboratory commodities from when they are received from suppliers to issuing to different locations within the hospital as well as stock taking of the laboratory commodities.Commodities are the drugs, reagents and equipment’s required in the laboratory. Metrics or unit of issue is the unit or quantity in which commodities or items are procured, stored, and issued. For example in kilograms, milligrams (100mg) etc.
+It mainly has three parts;
+
+#. Suppliers - For recording details of all suppliers of a given facility 
+#. Item - For recording items available in the laboratory
+#. Request - This module is used for requesting items that are required to be purchased or restocked in the laboratory 

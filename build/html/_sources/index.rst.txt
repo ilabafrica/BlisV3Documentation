@@ -24,6 +24,7 @@ Contents:
    Standards
    Components
    EMR Interfacing
+   Inventory
    Deployment
    Versioning and Releasing
    license
