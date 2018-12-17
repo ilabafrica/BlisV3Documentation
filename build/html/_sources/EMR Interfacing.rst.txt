@@ -43,32 +43,52 @@ Data ::
       'Authorization' : 'Bearer '.$accessToken
     }
     'json' :  {
-        "resourceType" : "DiagnosticOrder",
-        "subject" : {
-          "identifier" : "CJjajd6237",
-          "name": "Makanga Dickson",
-          "birthDate": "1994-05-30",
-          "gender": "male"
+        "resourceType": "ProcedureRequest",
+        "contained": [
+            {
+                "resourceType": "Patient",
+                "id": "patient1",
+                "identifier": [
+                    {
+                        "value": "CJjajd6237"
+                    }
+                ],
+                "name": [
+                    {
+                        "family": "Dickson",
+                        "given": [
+                            "Makanga"
+                        ]
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "1994-05-30"
+            }
+        ],
+        "extension": [
+            {
+                "url": "http://www.mhealth4afrika.eu/fhir/StructureDefinition/eventId",
+                "valueString": "exampleEventId"
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://www.mhealth4afrika.eu/fhir/StructureDefinition/dataElementCode",
+                    "code": "hbCodeExample",
+                    "display": "Hemoglobin [Mass/volume] in Blood"
+                }
+            ]
         },
-        "orderer" : {
-          "name":"Alfred Ojok",
-          "contact":"+777 7777 777 777",
-          "organization":"iLabAfrica Medical Centre"
+        "subject": {
+            "reference": "#patient1"
         },
-        "encounter" : {
-          "resourceType" : "Encounter",
-          "class":"outpatient",
-        },
-        "supportingInformation" : "-",
-        "item" : {
-          {
-            "test_type_id":"EGerG54",
-            "specimen" : "Stool"
-          }
-        },
-        "note" : "lorem ipsum"
-      }
-    }
+        "requester": {
+            "agent": {
+                "reference": "Practitioner/examplePractitionerId"
+            }
+        }
+  }
 
 
 After BLIS receives a test request from an EMR and completes the result entry,it does the following:
@@ -77,29 +97,108 @@ After BLIS receives a test request from an EMR and completes the result entry,it
 
 
 	{
-	    'headers' : {
+	      'headers' : {
 	      'Accept' : 'application/json',
 	      'Content-type' : 'application/json',
 	      'Authorization' : 'Bearer '.$accessToken
-	    }
-	    'json' :  {
-		  "resourceType" : "DiagnosticReport",
-		  "identifier" : "MBaX77TLgUgZOOIlSh",
-		  "subject" : {
-		    "identifier" : "MBaX77TLgUgZOOIlSh",
-		  },
-		  "result" : {
-		    "resourceType" : "Observation",
-		    "identifier" : "BaX77TLgUgZ",
-		    "effectiveDateTime" : NULL,
-		    "issued" : NULL,
-		    "performer" : "Alex Lab",
-		    "component" : [
-		      {
-		        "code" : "Specific Gravity",
-		        "valueString" : "10",
-		      }
-		    ],
-		  },
-		}  
-	}
+	   }
+        'json' : {
+            "resourceType": "DiagnosticReport",
+            "contained": [
+              {
+                  "resourceType": "Observation",
+                  "id": "Observation1",
+                  "extension": [
+                      {
+                          "url": "http://www.mhealth4afrika.eu/fhir/StructureDefinition/dataElementCode",
+                          "valueCode": "hbCodeExample"
+                      }
+                  ],
+                  "code": {
+                      "coding": [
+                          {
+                              "system": "http://loinc.org",
+                              "code": "718-7",
+                              "display": "Hemoglobin [Mass/volume] in Blood"
+                          }
+                      ]
+                  },
+                  "effectiveDateTime": "2018-12-06T17:28:11+03:00",
+                  "performer": [
+                      {
+                          "reference": "Practitioner/examplePractitionerId"
+                      }
+                  ],
+                  "valueQuantity": {
+                      "value": 7.2,
+                      "unit": "g/dl",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "g/dL"
+                  }
+              },
+              {
+                  "resourceType": "Observation",
+                  "id": "Observation2",
+                  "extension": [
+                      {
+                          "url": "http://www.mhealth4afrika.eu/fhir/StructureDefinition/dataElementCode",
+                          "valueCode": "rhCodeExample"
+                      }
+                  ],
+           "code": {
+                      "coding": [
+                          {
+                              "system": "http://loinc.org",
+                              "code": "883-9",
+                              "display": "ABO group [Type] in Blood"
+                          }
+                      ]
+                  },
+                  "effectiveDateTime": "2018-12-06T17:28:11+03:00",
+                  "performer": [
+                      {
+                          "reference": "Practitioner/examplePractitionerId"
+                      }
+                  ],
+                  "valueCodeableConcept": {
+                      "coding": [
+                          {
+                              "system": "http://snomed.info/sct",
+                              "code": "112144000",
+                              "display": "Blood group A (finding)"
+                          }
+                      ],
+                      "text": "A"
+                  }
+              }
+          ],
+          "extension": [
+              {
+                  "url": "http://www.mhealth4afrika.eu/fhir/StructureDefinition/eventId",
+                  "valueString": "exampleEventId"
+              }
+          ],
+          "identifier": [
+              {
+                  "value": "diagnosticReportExampleIdentifier"
+              }
+          ],
+          "subject": {
+              "reference": "Patient/examplePatientId"
+          },
+          "performer": [
+              {
+                  "actor": {
+                      "reference": "Practitioner/examplePractitionerId"
+                  }
+              }
+          ],
+          "result": [
+              {
+                  "reference": "#Observation1"
+              },
+              {
+                  "reference": "#Observation2"
+              }
+          ]
+   }

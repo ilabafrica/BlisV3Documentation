@@ -189,69 +189,168 @@ Url:</p>
 </pre></div>
 </div>
 <p>Data</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    {
-&#39;headers&#39; : {
-  &#39;Accept&#39; : &#39;application/json&#39;,
-  &#39;Content-type&#39; : &#39;application/json&#39;,
-  &#39;Authorization&#39; : &#39;Bearer &#39;.$accessToken
-}
-&#39;json&#39; :  {
-    &quot;resourceType&quot; : &quot;DiagnosticOrder&quot;,
-    &quot;subject&quot; : {
-      &quot;identifier&quot; : &quot;CJjajd6237&quot;,
-      &quot;name&quot;: &quot;Makanga Dickson&quot;,
-      &quot;birthDate&quot;: &quot;1994-05-30&quot;,
-      &quot;gender&quot;: &quot;male&quot;
-    },
-    &quot;orderer&quot; : {
-      &quot;name&quot;:&quot;Alfred Ojok&quot;,
-      &quot;contact&quot;:&quot;+777 7777 777 777&quot;,
-      &quot;organization&quot;:&quot;iLabAfrica Medical Centre&quot;
-    },
-    &quot;encounter&quot; : {
-      &quot;resourceType&quot; : &quot;Encounter&quot;,
-      &quot;class&quot;:&quot;outpatient&quot;,
-    },
-    &quot;supportingInformation&quot; : &quot;-&quot;,
-    &quot;item&quot; : {
-      {
-        &quot;test_type_id&quot;:&quot;EGerG54&quot;,
-        &quot;specimen&quot; : &quot;Stool&quot;
-      }
-    },
-    &quot;note&quot; : &quot;lorem ipsum&quot;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      {
+  &#39;headers&#39; : {
+    &#39;Accept&#39; : &#39;application/json&#39;,
+    &#39;Content-type&#39; : &#39;application/json&#39;,
+    &#39;Authorization&#39; : &#39;Bearer &#39;.$accessToken
   }
+  &#39;json&#39; :  {
+      &quot;resourceType&quot;: &quot;ProcedureRequest&quot;,
+      &quot;contained&quot;: [
+          {
+              &quot;resourceType&quot;: &quot;Patient&quot;,
+              &quot;id&quot;: &quot;patient1&quot;,
+              &quot;identifier&quot;: [
+                  {
+                      &quot;value&quot;: &quot;CJjajd6237&quot;
+                  }
+              ],
+              &quot;name&quot;: [
+                  {
+                      &quot;family&quot;: &quot;Dickson&quot;,
+                      &quot;given&quot;: [
+                          &quot;Makanga&quot;
+                      ]
+                  }
+              ],
+              &quot;gender&quot;: &quot;male&quot;,
+              &quot;birthDate&quot;: &quot;1994-05-30&quot;
+          }
+      ],
+      &quot;extension&quot;: [
+          {
+              &quot;url&quot;: &quot;http://www.mhealth4afrika.eu/fhir/StructureDefinition/eventId&quot;,
+              &quot;valueString&quot;: &quot;exampleEventId&quot;
+          }
+      ],
+      &quot;code&quot;: {
+          &quot;coding&quot;: [
+              {
+                  &quot;system&quot;: &quot;http://www.mhealth4afrika.eu/fhir/StructureDefinition/dataElementCode&quot;,
+                  &quot;code&quot;: &quot;hbCodeExample&quot;,
+                  &quot;display&quot;: &quot;Hemoglobin [Mass/volume] in Blood&quot;
+              }
+          ]
+      },
+      &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;#patient1&quot;
+      },
+      &quot;requester&quot;: {
+          &quot;agent&quot;: {
+              &quot;reference&quot;: &quot;Practitioner/examplePractitionerId&quot;
+          }
+      }
 }
 </pre></div>
 </div>
 <p>After BLIS receives a test request from an EMR and completes the result entry,it does the following:</p>
 <p><a href="#id7"><span class="problematic" id="id8">*</span></a>First BLIS tries to log into the EMR, When BLIS is authenticated it receives an access token from EMR and uses it to post test results to EMR eg.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
-    &#39;headers&#39; : {
-      &#39;Accept&#39; : &#39;application/json&#39;,
-      &#39;Content-type&#39; : &#39;application/json&#39;,
-      &#39;Authorization&#39; : &#39;Bearer &#39;.$accessToken
-    }
-    &#39;json&#39; :  {
-          &quot;resourceType&quot; : &quot;DiagnosticReport&quot;,
-          &quot;identifier&quot; : &quot;MBaX77TLgUgZOOIlSh&quot;,
-          &quot;subject&quot; : {
-            &quot;identifier&quot; : &quot;MBaX77TLgUgZOOIlSh&quot;,
-          },
-          &quot;result&quot; : {
-            &quot;resourceType&quot; : &quot;Observation&quot;,
-            &quot;identifier&quot; : &quot;BaX77TLgUgZ&quot;,
-            &quot;effectiveDateTime&quot; : NULL,
-            &quot;issued&quot; : NULL,
-            &quot;performer&quot; : &quot;Alex Lab&quot;,
-            &quot;component&quot; : [
-              {
-                &quot;code&quot; : &quot;Specific Gravity&quot;,
-                &quot;valueString&quot; : &quot;10&quot;,
-              }
-            ],
-          },
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     {
+           &#39;headers&#39; : {
+           &#39;Accept&#39; : &#39;application/json&#39;,
+           &#39;Content-type&#39; : &#39;application/json&#39;,
+           &#39;Authorization&#39; : &#39;Bearer &#39;.$accessToken
         }
+     &#39;json&#39; : {
+         &quot;resourceType&quot;: &quot;DiagnosticReport&quot;,
+         &quot;contained&quot;: [
+           {
+               &quot;resourceType&quot;: &quot;Observation&quot;,
+               &quot;id&quot;: &quot;Observation1&quot;,
+               &quot;extension&quot;: [
+                   {
+                       &quot;url&quot;: &quot;http://www.mhealth4afrika.eu/fhir/StructureDefinition/dataElementCode&quot;,
+                       &quot;valueCode&quot;: &quot;hbCodeExample&quot;
+                   }
+               ],
+               &quot;code&quot;: {
+                   &quot;coding&quot;: [
+                       {
+                           &quot;system&quot;: &quot;http://loinc.org&quot;,
+                           &quot;code&quot;: &quot;718-7&quot;,
+                           &quot;display&quot;: &quot;Hemoglobin [Mass/volume] in Blood&quot;
+                       }
+                   ]
+               },
+               &quot;effectiveDateTime&quot;: &quot;2018-12-06T17:28:11+03:00&quot;,
+               &quot;performer&quot;: [
+                   {
+                       &quot;reference&quot;: &quot;Practitioner/examplePractitionerId&quot;
+                   }
+               ],
+               &quot;valueQuantity&quot;: {
+                   &quot;value&quot;: 7.2,
+                   &quot;unit&quot;: &quot;g/dl&quot;,
+                   &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+                   &quot;code&quot;: &quot;g/dL&quot;
+               }
+           },
+           {
+               &quot;resourceType&quot;: &quot;Observation&quot;,
+               &quot;id&quot;: &quot;Observation2&quot;,
+               &quot;extension&quot;: [
+                   {
+                       &quot;url&quot;: &quot;http://www.mhealth4afrika.eu/fhir/StructureDefinition/dataElementCode&quot;,
+                       &quot;valueCode&quot;: &quot;rhCodeExample&quot;
+                   }
+               ],
+        &quot;code&quot;: {
+                   &quot;coding&quot;: [
+                       {
+                           &quot;system&quot;: &quot;http://loinc.org&quot;,
+                           &quot;code&quot;: &quot;883-9&quot;,
+                           &quot;display&quot;: &quot;ABO group [Type] in Blood&quot;
+                       }
+                   ]
+               },
+               &quot;effectiveDateTime&quot;: &quot;2018-12-06T17:28:11+03:00&quot;,
+               &quot;performer&quot;: [
+                   {
+                       &quot;reference&quot;: &quot;Practitioner/examplePractitionerId&quot;
+                   }
+               ],
+               &quot;valueCodeableConcept&quot;: {
+                   &quot;coding&quot;: [
+                       {
+                           &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+                           &quot;code&quot;: &quot;112144000&quot;,
+                           &quot;display&quot;: &quot;Blood group A (finding)&quot;
+                       }
+                   ],
+                   &quot;text&quot;: &quot;A&quot;
+               }
+           }
+       ],
+       &quot;extension&quot;: [
+           {
+               &quot;url&quot;: &quot;http://www.mhealth4afrika.eu/fhir/StructureDefinition/eventId&quot;,
+               &quot;valueString&quot;: &quot;exampleEventId&quot;
+           }
+       ],
+       &quot;identifier&quot;: [
+           {
+               &quot;value&quot;: &quot;diagnosticReportExampleIdentifier&quot;
+           }
+       ],
+       &quot;subject&quot;: {
+           &quot;reference&quot;: &quot;Patient/examplePatientId&quot;
+       },
+       &quot;performer&quot;: [
+           {
+               &quot;actor&quot;: {
+                   &quot;reference&quot;: &quot;Practitioner/examplePractitionerId&quot;
+               }
+           }
+       ],
+       &quot;result&quot;: [
+           {
+               &quot;reference&quot;: &quot;#Observation1&quot;
+           },
+           {
+               &quot;reference&quot;: &quot;#Observation2&quot;
+           }
+       ]
 }
 </pre></div>
 </div>
