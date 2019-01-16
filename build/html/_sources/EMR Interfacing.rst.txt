@@ -34,60 +34,82 @@ Data: ::
 Url:: 
 				/api/testrequest
 
-Data :: 
+Data: :: 
 
 	{
-    'headers' : {
+    'headers' : 
       'Accept' : 'application/json',
       'Content-type' : 'application/json',
       'Authorization' : 'Bearer '.$accessToken
-    }
-    'json' :  {
-        "resourceType": "ProcedureRequest",
-        "contained": [
-            {
-                "resourceType": "Patient",
-                "id": "patient1",
-                "identifier": [
-                    {
-                        "value": "CJjajd6237"
-                    }
-                ],
-                "name": [
-                    {
-                        "family": "Dickson",
-                        "given": [
-                            "Makanga"
-                        ]
-                    }
-                ],
-                "gender": "male",
-                "birthDate": "1994-05-30"
-            }
-        ],
-        "extension": [
-            {
-                "url": "http://www.mhealth4afrika.eu/fhir/StructureDefinition/eventId",
-                "valueString": "exampleEventId"
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://www.mhealth4afrika.eu/fhir/StructureDefinition/dataElementCode",
-                    "code": "hbCodeExample",
-                    "display": "Hemoglobin [Mass/volume] in Blood"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "#patient1"
-        },
-        "requester": {
-            "agent": {
-                "reference": "Practitioner/examplePractitionerId"
-            }
         }
+    'json' :  { 
+    "resourceType": "ProcedureRequest",
+    "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "patient",
+      "identifier": [
+        {
+          "value": "CJjajd6237"
+        }
+      ],
+      "name": [
+        {
+          "family": "Dickson",
+          "given": [
+            "Makanga"
+          ]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1994-05-30"
+    },
+    {
+      "resourceType": "Practitioner",
+      "id": "practitioner",
+      "identifier": [
+        {
+          "value": "blis-username"
+        }
+      ],
+      "name": [
+        {
+          "family": "John",
+          "given": [
+            "Doe"
+          ]
+        }
+      ],
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "+2541234567"
+        },
+        {
+          "system": "email",
+          "value": "jdoe@blis.com.ke"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://www.mhealth4afrika.eu/fhir/StructureDefinition/dataElementCode",
+        "code": "art-hb"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "#patient"
+  },
+  "context": {
+    "reference": "Encounter/abC32ah4X"
+  },
+  "requester": {
+    "agent": {
+      "reference": "#practitioner"
+    }
   }
 
 
@@ -102,103 +124,62 @@ After BLIS receives a test request from an EMR and completes the result entry,it
 	      'Content-type' : 'application/json',
 	      'Authorization' : 'Bearer '.$accessToken
 	   }
-        'json' : {
-            "resourceType": "DiagnosticReport",
-            "contained": [
-              {
-                  "resourceType": "Observation",
-                  "id": "Observation1",
-                  "extension": [
-                      {
-                          "url": "http://www.mhealth4afrika.eu/fhir/StructureDefinition/dataElementCode",
-                          "valueCode": "hbCodeExample"
-                      }
-                  ],
-                  "code": {
-                      "coding": [
-                          {
-                              "system": "http://loinc.org",
-                              "code": "718-7",
-                              "display": "Hemoglobin [Mass/volume] in Blood"
-                          }
-                      ]
-                  },
-                  "effectiveDateTime": "2018-12-06T17:28:11+03:00",
-                  "performer": [
-                      {
-                          "reference": "Practitioner/examplePractitionerId"
-                      }
-                  ],
-                  "valueQuantity": {
-                      "value": 7.2,
-                      "unit": "g/dl",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "g/dL"
-                  }
-              },
-              {
-                  "resourceType": "Observation",
-                  "id": "Observation2",
-                  "extension": [
-                      {
-                          "url": "http://www.mhealth4afrika.eu/fhir/StructureDefinition/dataElementCode",
-                          "valueCode": "rhCodeExample"
-                      }
-                  ],
-           "code": {
-                      "coding": [
-                          {
-                              "system": "http://loinc.org",
-                              "code": "883-9",
-                              "display": "ABO group [Type] in Blood"
-                          }
-                      ]
-                  },
-                  "effectiveDateTime": "2018-12-06T17:28:11+03:00",
-                  "performer": [
-                      {
-                          "reference": "Practitioner/examplePractitionerId"
-                      }
-                  ],
-                  "valueCodeableConcept": {
-                      "coding": [
-                          {
-                              "system": "http://snomed.info/sct",
-                              "code": "112144000",
-                              "display": "Blood group A (finding)"
-                          }
-                      ],
-                      "text": "A"
-                  }
-              }
-          ],
-          "extension": [
-              {
-                  "url": "http://www.mhealth4afrika.eu/fhir/StructureDefinition/eventId",
-                  "valueString": "exampleEventId"
-              }
-          ],
-          "identifier": [
-              {
-                  "value": "diagnosticReportExampleIdentifier"
-              }
-          ],
-          "subject": {
-              "reference": "Patient/examplePatientId"
-          },
-          "performer": [
-              {
-                  "actor": {
-                      "reference": "Practitioner/examplePractitionerId"
-                  }
-              }
-          ],
-          "result": [
-              {
-                  "reference": "#Observation1"
-              },
-              {
-                  "reference": "#Observation2"
-              }
-          ]
-   }
+        'json' : { 
+    "resourceType": "DiagnosticReport",
+    "contained": [
+        {
+            "resourceType": "Observation",
+            "id": "Observation1",
+            "extension": [
+                {
+                    "url": "http://www.mhealth4afrika.eu/fhir/StructureDefinition/dataElementCode",
+                    "valueCode": "art-hb"
+                }
+            ],
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "718-7",
+                        "display": "Hemoglobin [Mass/volume] in Blood"
+                    }
+                ]
+            },
+            "effectiveDateTime": "2019-01-14T17:12:54+03:00",
+            "performer": [
+                {
+                    "reference": "Practitioner/blis-username"
+                }
+            ],
+            "valueQuantity": {
+                "value": 7.2,
+                "unit": "g/dl",
+                "system": "http://unitsofmeasure.org",
+                "code": "g/dL"
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "value": "diagnosticReportExampleIdentifier"
+        }
+    ],
+    "subject": {
+        "reference": "Patient/CJjajd6237"
+    },
+    "context": {
+        "reference": "Encounter/abC32ah4X"
+    },
+    "performer": [
+        {
+            "actor": {
+                "reference": "Practitioner/blis-username"
+            }
+        }
+    ],
+    "result": [
+        {
+            "reference": "#Observation1"
+        }
+    ]
+}
